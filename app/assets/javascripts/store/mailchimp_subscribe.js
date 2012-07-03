@@ -6,26 +6,18 @@ jQuery.ajaxSetup({
 });
 
 var SpreeMailchimpApp = {
-
   doSubmit: function(e) {
           SpreeMailchimpApp.getBusy(null); // could really use $.proxy here but spree doesn't have 1.4
           $.post(this.action+'.js', $(this).serialize(), SpreeMailchimpApp.getNotBusy, "script");
           return false;
   },
-
   getBusy : function( fn ) {
-          $("body").css('cursor', 'progress');
           $("#busy_indicator").fadeIn('fast', fn);
   },
-
   getNotBusy : function() {
-          $("body").css('cursor', 'default');
           $("#busy_indicator").fadeOut('fast');
   }
-
 };
-
-
 
 jQuery(document).ready( function() {
 
@@ -39,7 +31,6 @@ jQuery(document).ready( function() {
     });
 
     $('#mailchimp_subscribe_wrap form').bind('submit', SpreeMailchimpApp.doSubmit);
-
 });
 
 
