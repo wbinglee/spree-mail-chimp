@@ -36,7 +36,7 @@ class Spree::SubscriptionsController < Spree::BaseController
         end
       end
     end
-
+    # if @errors.empty?
     respond_to do |wants|
       wants.js
     end

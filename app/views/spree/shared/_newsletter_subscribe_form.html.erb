@@ -1,15 +1,18 @@
 <div id="mailchimp_subscribe_wrap">
-  <%= form_for :user, :url => :subscriptions do |f| %>
+  <%= form_for :user, create_subscription_path, remote: true do |f| %>
     <table>
       <tr>
         <td>
-          <%= text_field_tag :email, t('enter_your_email'), :class => 'email', :id => 'subscribe_email' %>
+          <%= text_field_tag :email, t('enter_your_email'), class:  'email', id:   'subscribe_email' %>
         </td>
       </tr>
       <tr>
         <td>
-          <%= submit_tag t('subscribe'), :id => 'op_subscribe' %>
+          <%= submit_tag t('subscribe'), id:  'op_subscribe' %>
         </td>
+	<td>
+	   <%=  image_tag "ajax-loader.gif", :id => 'busy_indicator'  %>
+	</td>
       </tr>
     </table>
   <% end -%>
