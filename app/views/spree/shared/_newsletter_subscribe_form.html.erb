@@ -1,5 +1,5 @@
 <div id="mailchimp_subscribe_wrap">
-  <%= form_for :user, create_subscription_path, remote: true do |f| %>
+   <%= form_for :user, :url => :subscriptions  , remote: true do |f| %>
     <table>
       <tr>
         <td>
