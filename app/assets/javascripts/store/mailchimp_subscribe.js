@@ -1,4 +1,3 @@
-
 var subscribe_email_default_txt = '';
 
 jQuery.ajaxSetup({
@@ -8,7 +7,7 @@ jQuery.ajaxSetup({
 var SpreeMailchimpApp = {
   doSubmit: function(e) {
           SpreeMailchimpApp.getBusy(null); // could really use $.proxy here but spree doesn't have 1.4
-          $.post(this.action+'.js', $(this).serialize(),  "script");
+          $.post(this.action+'.js', $(this).serialize(), SpreeMailchimpApp.getNotBusy, "script");
           return false;
   },
   getBusy : function( fn ) {
@@ -30,9 +29,5 @@ jQuery(document).ready( function() {
       if (this.value == '') this.value = subscribe_email_default_txt;
     });
 
-    $('#mailchimp_subscribe_wrap form').bind('submit', SpreeMailchimpApp.doSubmit).bind("ajaxComplete", function(){
-    SpreeMailChimpApp.getNotBusy(); 
+    $('#mailchimp_subscribe_wrap form').bind('submit', SpreeMailchimpApp.doSubmit);
 });
-
-
-
