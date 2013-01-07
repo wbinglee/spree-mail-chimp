@@ -1,8 +1,9 @@
-var subscribe_email_default_txt = '';
-
 jQuery.ajaxSetup({
     'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 });
+
+var subscribe_email_default_txt = '';
+
 
 var SpreeMailchimpApp = {
   doSubmit: function(e) {

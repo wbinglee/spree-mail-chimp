@@ -37,8 +37,10 @@ class Spree::SubscriptionsController < Spree::BaseController
       end
     end
     # if @errors.empty?
-    respond_to do |wants|
-      wants.js
+    respond_to do |format|
+      format.html { redirect_to(users_url) }
+      format.xml  { head :ok }
+      format.js   {          }
     end
   end
 end
