@@ -4,7 +4,6 @@ module SpreeMailChimp
 
       def add_javascripts
         append_file "app/assets/javascripts/store/all.js", "//= require store/spree_mail_chimp\n"
-	append_file "app/assets/javascripts/store/all.js", "//= require store/jquery.simplemodal\n"
       end
 
       def add_stylesheets
