@@ -23,12 +23,9 @@ class Spree::SubscriptionsController < Spree::BaseController
         begin
           hominid.list_subscribe(
             Spree::Config.get(:mailchimp_list_id), 
-            params[:email], 
-            Spree::Config.get(:mailchimp_merge_vars), 
-            'html', 
-            Spree::Config.get(:mailchimp_double_opt_in), 
-            false, 
-            false, 
+            params[:email],{'FNAME' => params[:fname], 'LNAME' => params[:lname], 'MMERGE3' => params[:mmerge3]}, 
+            true, 
+            true, 
             Spree::Config.get(:mailchimp_send_welcome)
           )
         rescue Hominid::APIError => e

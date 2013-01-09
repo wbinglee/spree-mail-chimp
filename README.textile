@@ -32,37 +32,30 @@ h3. Configuration
 
 See the Mail Chimp Settings forms in the Admin under Configuration.
 
-Note, using Mail Chimp "Merge Vars", you can have any callable methods on User sent
-to the MC list, mapped to indentically named (but uppercased) fields in the MC list admin console.
-Unfortunately these are only sent at the time the subscription is created, so there isn't much available.
 
 h3. Changes
 
-Version 3.0.0 - released 19 Apr 2012 - Spree 1.0 compat
-Version 2.0.0 - released 6 Dec 2010 - Spree 0.30-stable
-Version 1.0.1 - released 21 Nov 2010 - Spree 0.11-stable
+V.3.0.24	Embedded jquery.simplemodal.js in _newsletter_subscribe.html.erb
+		Added First Name, Last Name, and Zip Code fields
 
 h3. Requirements
 
-Spree >= 1.0
-hominid >= 2.2.0 http://rubygems.org/gems/hominid
+Spree >= 1.1.14
+hominid ~> 3.0.0 http://rubygems.org/gems/hominid
 
-Also uses the jQuery SimpleModal plugin, included.
 
 h3. Credits
 
 Authored by Sam Beam @sbeam
 Migrated to Spree 0.30 by Bastian Schnurle @bzt
 Migrated to Spree 1.0 (and extensively refactored) by James Kong @jkongie
-
+Repaired missing jqurey.simplemodal, added fields for names, zip code by Jerrold Thompson @bluehandtalking
 Inspired originally by https://github.com/softa/mailee_spree
 
-includes SimpleModal http://www.ericmmartin.com/projects/simplemodal/
+Includes SimpleModal http://www.ericmmartin.com/projects/simplemodal/
 
 h3. TODO
 
-* make subscribe_to_newsletter_field work
-* Send user address info to MC via merge vars, when address is given
 * Export new orders to Mailchimp for full CRM gnarliness
 * Utility to export existing users to Mailchimp
 * Add admin controller to view lists and subscriptions

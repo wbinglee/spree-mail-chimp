@@ -3,7 +3,9 @@ jQuery.ajaxSetup({
 });
 
 var subscribe_email_default_txt = '';
-
+var fname_default_txt = '';
+var lname_default_txt = '';
+var zip_code_default_txt = '';
 
 var SpreeMailchimpApp = {
   doSubmit: function(e) {
@@ -21,14 +23,35 @@ var SpreeMailchimpApp = {
 
 jQuery(document).ready( function() {
 
-    subscribe_email_default_txt = $('#subscribe_email').val();
+    subscribe_email_default_txt = $('#email').val();
+    fname_default_txt = $('#fname').val(); 
+    lname_default_txt = $('#lname').val(); 
+    zip_code_default_txt = $('#mmerge3').val(); 
 
-    $('#subscribe_email').bind('focus', function() {
+
+    $('#email').bind('focus', function() {
       if (this.value == subscribe_email_default_txt) this.value = '';
     });
-    $('#subscribe_email').bind('blur', function() {
+    $('#email').bind('blur', function() {
       if (this.value == '') this.value = subscribe_email_default_txt;
     });
-
+    $('#fname').bind('focus', function() {
+      if (this.value == fname_default_txt) this.value = '';
+    });
+    $('#fname').bind('blur', function() {
+      if (this.value == '') this.value = fname_default_txt;
+    });
+    $('#lname').bind('focus', function() {
+      if (this.value == lname_default_txt) this.value = '';
+    });
+    $('#lname').bind('blur', function() {
+      if (this.value == '') this.value = lname_default_txt;
+    });
+    $('#mmerge3').bind('focus', function() {
+      if (this.value == zip_code_default_txt) this.value = '';
+    });
+    $('#mmerge3').bind('blur', function() {
+      if (this.value == '') this.value = zip_code_default_txt;
+    });
     $('#mailchimp_subscribe_wrap form').bind('submit', SpreeMailchimpApp.doSubmit);
 });

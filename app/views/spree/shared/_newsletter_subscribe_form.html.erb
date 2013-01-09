@@ -1,25 +1,25 @@
 <div id="mailchimp_subscribe_wrap">
    <%= form_for :user, :url => :subscriptions  , remote: true do |f| %>
     <table>
+      <tr>
+        <td>
+	   <%= text_field_tag :email, t('enter_your_email'),   name: 'email', id: 'email' %>
+        </td>
+      </tr>
+
 	<tr>
         <td>
-          <%= text_field_tag :fname, t('first_name'),  id:   'fname' %>
+          <%= text_field_tag :text, t('first_name'), name: 'fname', id: 'fname' %>
         </td>
       </tr>
       <tr>
         <td>
-          <%= text_field_tag :lname, t('last_name'),  id:   'lname' %>
+          <%= text_field_tag :text, t('last_name'),  name: 'lname', id: 'lname' %>
         </td>
       </tr>
       <tr>
         <td>
-          <%= text_field_tag :zip, t('enter_your_zip_code'),  id:   'MMERGE3' %>
-        </td>
-      </tr>
-	 
-      <tr>
-        <td>
-          <%= text_field_tag :email, t('enter_your_email'), id:   'subscribe_email' %>
+          <%= text_field_tag :zip, t('zip'),  name: 'mmerge3', id: 'mmerge3' %>
         </td>
       </tr>
       <tr>
