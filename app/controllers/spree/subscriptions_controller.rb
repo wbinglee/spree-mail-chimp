@@ -33,11 +33,8 @@ class Spree::SubscriptionsController < Spree::BaseController
         end
       end
     end
-    # if @errors.empty?
-    respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
-      format.js   {          }
-    end
+   
+    @message = @errors.any? ? {:error => @errors.join(' / ')} : {:notice => t(:you_have_been_subscribed)}
+    redirect_to :back, :flash => @message
   end
 end
