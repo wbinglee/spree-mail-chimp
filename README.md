@@ -67,7 +67,6 @@ Includes SimpleModal http://www.ericmmartin.com/projects/simplemodal/
 * Tests :/
 * Use mailchimp-gem or gibbon instead
 * Remove simple modal use plain jsonp
-* Fix translations
 
 ### Contributing
 
