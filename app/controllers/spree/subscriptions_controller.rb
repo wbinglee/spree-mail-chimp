@@ -34,7 +34,8 @@ class Spree::SubscriptionsController < Spree::BaseController
       end
     end
    
-    @message = @errors.any? ? {:error => @errors.join(' / ')} : {:notice => t(:you_have_been_subscribed)}
-    redirect_to :back, :flash => @message
+    respond_to do |wants|
+      wants.js
+    end
   end
 end
