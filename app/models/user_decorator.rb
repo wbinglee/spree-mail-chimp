@@ -12,12 +12,13 @@ private
   def mailchimp_add_to_mailing_list
     if self.is_mail_list_subscriber?
       begin
-        hominid.list_subscribe(mailchimp_list_id, self.email, mailchimp_merge_vars, 'html', *mailchimp_subscription_opts)
-        logger.debug "Fetching new mailchimp subscriber info"
+        # Note that Merge Vars is taking a value from the spree-multi-domain gem
+        hominid.list_subscribe(mailchimp_list_id, self.email,{'DROP' => Spree::Store.current.code}, 'html', *mailchimp_subscription_opts)
+        puts "Fetching new mailchimp subscriber info"
 
         assign_mailchimp_subscriber_id if self.mailchimp_subscriber_id.blank?
       rescue Hominid::APIError => e
-        logger.warn "SpreeMailChimp: Failed to create contact in Mailchimp: #{e.message}"
+        puts "SpreeMailChimp: Failed to create contact in Mailchimp: #{e.message}"
       end
     end
   end
