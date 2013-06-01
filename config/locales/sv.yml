@@ -1,0 +1,22 @@
+---
+sv:
+  spree:
+    do_subscribe_to_our_mailing_list: "Prenumerera på vårt nyhetsbrev?"
+    enter_your_email: "Ange din e-postadress"
+    invalid_email_address: "Ange din fullständiga e-postadress, t.ex. dittnamn@doman.se"
+    mailchimp_api_key: "API Key"
+    mailchimp_double_opt_in: "Double opt-in"
+    mailchimp_keys: Keys
+    mailchimp_list_id: "List ID"
+    mailchimp_merge_vars: "Användarattribut att skicka med abonnemang"
+    mailchimp_merge_vars_help: "Kommaseparerad lista infordringsbara metoder för användare, vilket motsvarar 'Merge Vars' setup i listan admin. t ex ålder, intressen, plats"
+    mailchimp_send_notify: "Skicka administratörsmeddelande vid prenumeration"
+    mailchimp_send_welcome: "Skicka välkomstmeddelande"
+    mailchimp_settings: "Mail Chimp inställningar"
+    mailchimp_settings_description: "API Keys och val för Mail Chimp integration"
+    missing_email: "Det fanns ingen e-postadress angivet."
+    preferences: Inställningar
+    something_went_wrong: "Något gick fel när du försöker lägga till din prenumeration. Försök igen senare."
+    subscribe: Prenumerera
+    that_address_is_already_subscribed: "Du prenumererar redan på vår mailinglista."
+    you_have_been_subscribed: "Du har prenumererat på vår mailinglista. Vänligen kontrollera din e-post inom kort för en bekräftelse."
