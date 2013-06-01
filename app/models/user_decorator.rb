@@ -1,11 +1,10 @@
-Spree::User.class_eval do
-
+Spree.user_class.class_eval do
   before_create :mailchimp_add_to_mailing_list
   before_update :mailchimp_update_in_mailing_list, :if => :is_mail_list_subscriber_changed?
 
   attr_accessible :is_mail_list_subscriber
 
-  private
+private
 
   # Subscribes a user to the mailing list
   #
@@ -117,5 +116,4 @@ Spree::User.class_eval do
     end
     merge_vars
   end
-
 end
