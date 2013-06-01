@@ -1,7 +1,5 @@
 module Spree
-
   class Admin::MailChimpSettingsController < Admin::BaseController
-
     def show
     end
 
@@ -15,7 +13,4 @@ module Spree
       end
     end
   end
-
 end
-
-

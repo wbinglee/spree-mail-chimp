@@ -1,34 +1,33 @@
 <div id="mailchimp_subscribe_wrap">
-   <%= form_for :user, :url => :subscriptions  , remote: true do |f| %>
+   <%= form_for :user, url: :subscriptions, remote: true do |f| %>
     <table>
       <tr>
         <td>
-	   <%= text_field_tag :email, Spree.t('enter_your_email'),   name: 'email', id: 'email' %>
-        </td>
-      </tr>
-
-	<tr>
-        <td>
-          <%= text_field_tag :text, Spree.t('first_name'), name: 'fname', id: 'fname' %>
+          <%= text_field_tag :email, Spree.t(:enter_your_email), name: 'email', id: 'email' %>
         </td>
       </tr>
       <tr>
         <td>
-          <%= text_field_tag :text, Spree.t('last_name'),  name: 'lname', id: 'lname' %>
+          <%= text_field_tag :text, Spree.t(:first_name), name: 'fname', id: 'fname' %>
         </td>
       </tr>
       <tr>
         <td>
-          <%= text_field_tag :zip, Spree.t('zip'),  name: 'mmerge3', id: 'mmerge3' %>
+          <%= text_field_tag :text, Spree.t(:last_name), name: 'lname', id: 'lname' %>
         </td>
       </tr>
       <tr>
         <td>
-          <%= submit_tag Spree.t('subscribe'), id:  'op_subscribe' %>
+          <%= text_field_tag :zip, Spree.t(:zip), name: 'mmerge3', id: 'mmerge3' %>
         </td>
-	<td>
-	   <%=  image_tag "ajax-loader.gif", :id => 'busy_indicator'  %>
-	</td>
+      </tr>
+      <tr>
+        <td>
+          <%= submit_tag Spree.t(:subscribe), id: 'op_subscribe' %>
+        </td>
+        <td>
+          <%=  image_tag 'ajax-loader.gif', id: 'busy_indicator'  %>
+        </td>
       </tr>
     </table>
   <% end -%>
