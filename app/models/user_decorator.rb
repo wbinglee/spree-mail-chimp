@@ -13,7 +13,7 @@ private
     if self.is_mail_list_subscriber?
       begin
         # Note that Merge Vars is taking a value from the spree-multi-domain gem
-        hominid.list_subscribe(mailchimp_list_id, self.email,{'DROP' => Spree::Store.current.code}, 'html', *mailchimp_subscription_opts)
+        hominid.list_subscribe(mailchimp_list_id, self.email,{}, 'html', *mailchimp_subscription_opts)
         puts "Fetching new mailchimp subscriber info"
 
         assign_mailchimp_subscriber_id if self.mailchimp_subscriber_id.blank?
