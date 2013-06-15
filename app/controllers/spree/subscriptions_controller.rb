@@ -17,7 +17,7 @@ class Spree::SubscriptionsController < Spree::BaseController
           Rails.logger.error e.to_s
       end
 
-      if @mc_member
+      if @mc_member['success']!=0
         @errors << Spree.t(:that_address_is_already_subscribed)
       else
         begin
